@@ -1,0 +1,5 @@
+.vscode
+venv/
+creds.py
+*.pyc
+__pycache__
