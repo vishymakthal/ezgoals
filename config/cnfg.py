@@ -2,4 +2,4 @@
 LOOKBEHIND_SECONDS = 5 * 60
 
 # teams to keep an eye on 
-WATCHLIST= 'Brugge|Arsenal|Dortmund|Valencia|Bayern|Liverpool|Tottenham|Chelsea|Barcelona|Juventus|Real Madrid|Espanyol'   
+WATCHLIST = 'Arsenal|Manchester|Liverpool|Tottenham|Chelsea|Sheffield|Wolve|Leicester|Norwich|Brighton|Southampton' 
