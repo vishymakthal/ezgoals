@@ -1,3 +1,3 @@
 # ezgoals
 
-Python script to post soccer highlights to a chat room
+Set of AWS Lambda functions that enable goal notifications sourced from /r/soccer.
