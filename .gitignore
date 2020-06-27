@@ -3,3 +3,6 @@ venv/
 creds.py
 *.pyc
 __pycache__
+*.zip
+.aws-sam
+.DS_Store
