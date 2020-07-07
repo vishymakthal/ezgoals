@@ -35,7 +35,7 @@ def main(event, ctx):
     # send payload from reddit to Webex Teams channels
     for goal in goals:
         message = {
-            "markdown" : GOAL_MARKDOWN.format(goal['title'], goal['link'], goal['comments'])
+            "markdown" : cnfg.GOAL_MARKDOWN.format(goal['title'], goal['link'], goal['comments'])
         }
         resp = webex_teams.send_to_rooms(message)
         if resp != "OK":
