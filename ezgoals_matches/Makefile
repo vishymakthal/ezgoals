@@ -1,4 +1,4 @@
-SERVICE=EzGoalsWebex
+SERVICE=EzGoalsMatches
 
 build:
 	sam build -m requirements.txt --use-container
