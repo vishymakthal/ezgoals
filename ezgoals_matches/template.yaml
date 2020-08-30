@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    ezgoals match grabber function
+Globals:
+    Function:
+        Timeout: 60
+
+Resources:
+
+    EzGoalsMatches:
+        Type: AWS::Serverless::Function 
+        Properties:
+            CodeUri: ./src
+            Handler: ezgoals_matches.__main__.main
+            Runtime: python3.7
