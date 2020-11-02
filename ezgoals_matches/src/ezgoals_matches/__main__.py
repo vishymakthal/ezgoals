@@ -1,4 +1,5 @@
 from datetime import datetime
+from dateutil import tz
 import logging
 
 from ezgoals_matches.services.football_data_svc import FootballData
@@ -34,18 +35,16 @@ def main(event, ctx):
     # grab a WebexTeams instance
     webex_teams = WebexTeams(creds.WEBEX_ROOMS)
 
-    msg = "## Matches of the Day"
+    msg = "## Matches of the Day\n"
 
     for comp in matches:
 
-        msg += f"### {comp['competition']['name']} {cnfg.FLAGS[comp['competition']['area']['name']]}\n"
-
-        if comp['matches']: 
+        if comp['matches']:
+            msg += f"### {comp['competition']['name']} {cnfg.FLAGS[comp['competition']['area']['name']]}\n"
             for m in comp['matches']:
-                msg += f"* {m['homeTeam']['name']} vs {m['awayTeam']['name']} - {m['utcDate'].split('T')[1]} UTC \n"
+                utc = datetime.strptime(m['utcDate'], '%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=tz.gettz('UTC'))
+                msg += f"* {m['homeTeam']['name']} vs {m['awayTeam']['name']} - {utc.astimezone(tz.gettz('America/New_York')).strftime('%I:%M%p')} ET \n"
             msg += '\n'
-        else:
-            msg += 'No matches today \n\n'
 
     # send payload to WebexTeams 
     message = {
