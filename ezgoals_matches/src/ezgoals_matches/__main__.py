@@ -35,7 +35,7 @@ def main(event, ctx):
     # grab a WebexTeams instance
     webex_teams = WebexTeams(creds.WEBEX_ROOMS)
 
-    msg = "## Matches of the Day"
+    msg = "## Matches of the Day\n"
 
     for comp in matches:
 
